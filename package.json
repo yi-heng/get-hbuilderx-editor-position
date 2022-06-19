@@ -1,0 +1,44 @@
+{
+    "id": "get-editor-position",
+    "name": "get-editor-position",
+    "description": "获取当前编辑器光标位置所在行列，并复制到剪贴板",
+    "displayName": "复制光标行列位置",
+    "version": "0.0.1",
+    "publisher": "xiaohutu",
+    "engines": {
+        "HBuilderX": "^2.7.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "main": "./extension",
+    "activationEvents": [
+        "onCommand:api.getEditorCursorPosition"
+    ],
+    "contributes": {
+        "commands": [{
+            "command": "api.getEditorCursorPosition",
+            "title": "复制光标行列位置"
+        }],
+        "keybindings": [{
+            "command": "api.getEditorCursorPosition",
+            "key": "Ctrl+Alt+C",
+            "macosx": "Command+Alt+C"
+        }],
+        "menus": {
+            "editor/context": [{
+                    "command": "api.getEditorCursorPosition",
+                    "group": "z_commands",
+                    "when": "editorTextFocus"
+                },
+                {
+                    "group": "z_commands"
+                }
+            ]
+        }
+    },
+    "extensionDependencies": [
+        "plugin-manager"
+    ],
+    "dependencies": {}
+}
